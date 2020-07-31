@@ -1,0 +1,79 @@
+.Skyline {
+  $time: 120s;
+
+  opacity: 0.25;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+
+  .Skyline__cloud {
+    opacity: 0.15;
+
+    position: absolute;
+    top: 0;
+    width: 40vw;
+    height: 40vw;
+
+    background-image: url(cloud.svg);
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-size: 100%;
+    animation: $time * 4 SkylineCloudScroll infinite linear;
+  }
+
+  .Skyline__cloud--a {
+    top: -25vh;
+  }
+
+  .Skyline__cloud--b {
+    animation-delay: -($time * 4) * 0.5;
+    top: -15vh;
+  }
+
+  .Skyline__front,
+  .Skyline__back {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    background-position-y: bottom;
+    background-size: 66vw auto;
+  }
+
+  .Skyline__front {
+    background-image: url(sky_front.svg);
+    animation: $time SkylineScroll infinite linear;
+  }
+
+  .Skyline__back {
+    background-image: url(sky_back.svg);
+    animation: $time * 1.33 SkylineScroll infinite linear;
+    opacity: 0.5;
+  }
+}
+
+@keyframes SkylineScroll {
+  from {
+    background-position-x: 0;
+  }
+
+  to {
+    background-position-x: 66vw;
+  }
+}
+
+@keyframes SkylineCloudScroll {
+  from {
+    left: -40vw;
+  }
+
+  to {
+    left: 100vw;
+  }
+}

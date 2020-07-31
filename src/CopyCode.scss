@@ -1,0 +1,28 @@
+.CopyCode {
+  display: block;
+  margin: 1em 0;
+  padding: 1em;
+  background-color: rgba(white, 0.2);
+  border-radius: 0.5em;
+  box-shadow: 0.125em 0.125em rgba(black, 0.25);
+  line-height: 1;
+
+  &:hover {
+    background-color: rgba(white, 0.25);
+    cursor: pointer;
+  }
+}
+
+.CopyCodeStatus {
+  float: right;
+}
+
+.CopyCodeStatusText {
+  display: inline-block;
+  visibility: hidden;
+  padding-right: 0.5em;
+
+  &--visible {
+    visibility: visible;
+  }
+}

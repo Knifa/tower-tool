@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+import { GCodeInputBlock } from "./blocks/GCodeInputBlock";
+import { GCodeOutputBlock } from "./blocks/GCodeOutputBlock";
+import { GCodeSettingsBlock } from "./blocks/GCodeSettingsBlock";
+import { TowerSettings } from "./blocks/TowerSettings";
+import { SummaryBlock } from "./blocks/SummaryBlock";
+import { Intro } from "./Intro";
+
+import { useSelector } from "./state";
+import { GCodeFile, GCodeProcessor } from "./gcode";
+
+import "./App.scss";
+
+export const App = () => {
+  const [gcodeFile, setGcodeFile] = useState<File | null>(null);
+  const state = useSelector((state) => state);
+
+  const processEnabled = gcodeFile !== null;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="IntroContainer">
+        <Intro />
+      </div>
+
+      <div className="ToolContainer">
+        <GCodeInputBlock onChange={setGcodeFile} />
+        <GCodeSettingsBlock />
+        <TowerSettings />
+        <SummaryBlock />
+        <GCodeOutputBlock
+          onProcessClick={() => {
+            GCodeFile.fromFile(gcodeFile!).then((f) => {
+              const processor = GCodeProcessor.fromVariable(
+                state.gcode.variable.type,
+                state.gcode.gcodeSettings,
+                state.gcode.variable.range
+              );
+
+              processor.process(f);
+            });
+          }}
+          enabled={processEnabled}
+        />
+      </div>
     </div>
   );
-}
-
-export default App;
+};

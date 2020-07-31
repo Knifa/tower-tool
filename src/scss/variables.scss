@@ -1,0 +1,40 @@
+@import "~sass-material-colors";
+
+$primary-gradient-colors: (
+  material-color("deep-orange", "700"),
+  material-color("deep-purple", "700")
+);
+
+$glass-gradient-colors: ();
+@each $color in $primary-gradient-colors {
+  $glass-gradient-colors: append(
+    $glass-gradient-colors,
+    change-color($color, $alpha: 0.5),
+    comma
+  );
+}
+
+$glass-hover-gradient-colors: ();
+@each $color in $primary-gradient-colors {
+  $glass-hover-gradient-colors: append(
+    $glass-hover-gradient-colors,
+    adjust-color(
+      change-color($color, $alpha: 0.5),
+      $red: 25,
+      $green: 25,
+      $blue: 25
+    ),
+    comma
+  );
+}
+
+$primary-gradient: linear-gradient(0deg, $primary-gradient-colors);
+$glass-gradient: linear-gradient(0deg, $glass-gradient-colors);
+$glass-hover-gradient: linear-gradient(0deg, $glass-hover-gradient-colors);
+
+$glass-white-color: rgba(white, 0.2);
+$glass-black-color: rgba(black, 0.2);
+
+$border-radius: 0.25em;
+$shadow-small: 0.125em 0.125em rgba(black, 0.25);
+$shadow-big: 0.25em 0.25em rgba(0, 0, 0, 0.15);

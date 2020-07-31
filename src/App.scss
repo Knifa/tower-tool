@@ -1,0 +1,11 @@
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .IntroContainer,
+  .ToolContainer {
+    width: 600px;
+    margin: 0 1em;
+  }
+}

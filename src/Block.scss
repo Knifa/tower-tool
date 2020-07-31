@@ -1,0 +1,72 @@
+@import "~sass-material-colors";
+@import "./scss/variables.scss";
+
+.Block {
+  border-radius: 0.5em;
+  box-shadow: $shadow-big;
+
+  overflow: hidden;
+  margin: 1em 0em;
+  width: 100%;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.BlockHeader {
+  .BlockHeader__title {
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1em;
+  }
+}
+
+.BlockContent {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  .BlockContent__text {
+    p:first-child {
+      margin-top: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    padding: 1em;
+  }
+
+  button {
+    padding: 1em;
+    width: 100%;
+    color: white;
+    box-shadow: $shadow-small;
+
+    background: none;
+    background-image: $glass-gradient;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    border: none;
+    outline: none;
+
+    border-radius: 0.25em;
+
+    &:hover {
+      background-image: $glass-hover-gradient;
+    }
+
+    &:disabled {
+      background-image: $glass-gradient;
+      opacity: 0.5;
+    }
+  }
+
+  span.InlineCode {
+    background-color: rgba(white, 0.2);
+    padding: 0 0.25em;
+    border-radius: 0.25em;
+  }
+}

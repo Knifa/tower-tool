@@ -1,0 +1,13 @@
+.GCodeInputBlock {
+  padding: 1em;
+
+  input {
+    display: none;
+  }
+}
+
+.GCodeInputBlock__fileName {
+  font-size: 16pt;
+  text-align: center;
+  margin-bottom: 1rem;
+}

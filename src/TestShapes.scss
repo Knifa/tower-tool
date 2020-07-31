@@ -1,0 +1,43 @@
+@import "./scss/variables.scss";
+
+.TestShapeContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+
+  margin: 0 20%;
+
+  .TestShape {
+    display: block;
+    margin: 0.25em 0.25em;
+    text-align: center;
+
+    padding: 0.5em 1em;
+    background-color: $glass-white-color;
+    border-radius: $border-radius;
+    box-shadow: $shadow-small;
+
+    text-decoration: none;
+
+    &:link,
+    &:visited,
+    &:active {
+      color: white;
+    }
+
+    &:hover {
+      background-color: rgba(white, 0.25);
+    }
+
+    video,
+    img {
+      max-height: 8em;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
