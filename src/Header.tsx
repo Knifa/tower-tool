@@ -6,6 +6,8 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "./Header.scss";
 
 export const Header = () => {
+  const tag = process.env.REACT_APP_GIT_TAG;
+
   return (
     <header>
       <h1>
@@ -20,7 +22,7 @@ export const Header = () => {
             transform="down-1 grow-4"
           />
         </a>{" "}
-        <a href="https://github.com/Knifa/tower-tool/tree/v1.0">v1.0</a> by{" "}
+        <a href={`https://github.com/Knifa/tower-tool/tree/${tag}`}>{tag}</a> by{" "}
         <a href="https://github.com/Knifa">@knifa</a>
       </h2>
     </header>
