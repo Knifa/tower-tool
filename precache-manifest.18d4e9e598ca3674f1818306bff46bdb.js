@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "69c9236deb5aa4f8da078fae1cefc81e",
+    "revision": "f2975623dd4abebfb990d5d37f814756",
     "url": "/tower-tool/index.html"
   },
   {
