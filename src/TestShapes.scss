@@ -1,4 +1,5 @@
-@import "./scss/variables.scss";
+@import "./scss/variables";
+@import "./scss/mixins";
 
 .TestShapeContainer {
   display: flex;
@@ -7,6 +8,10 @@
   flex-wrap: wrap;
 
   margin: 0 20%;
+
+  @include on-mobile {
+    margin: 0;
+  }
 
   .TestShape {
     display: block;

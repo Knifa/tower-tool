@@ -1,18 +1,28 @@
-header {
-  text-align: center;
-  padding: 2em;
+@import "./scss/mixins";
 
+header {
+  padding: 2em 0;
+
+  text-align: center;
   text-shadow: 0.1em 0.1em rgba(0, 0, 0, 0.25);
 
   h1 {
     font-size: 48pt;
     margin: 0;
+
+    @include on-mobile {
+      font-size: 30pt;
+    }
   }
 
   h2 {
     font-size: 12pt;
     margin-top: 1rem;
     font-weight: normal;
+
+    @include on-mobile {
+      margin-top: 1.5rem;
+    }
   }
 }
 

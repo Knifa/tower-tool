@@ -1,5 +1,6 @@
 @import "~sass-material-colors";
-@import "./scss/variables.scss";
+@import "./scss/variables";
+@import "./scss/mixins";
 
 .Block {
   border-radius: 0.5em;
@@ -11,6 +12,11 @@
 
   &:first-child {
     margin-top: 0;
+  }
+
+  @include on-mobile {
+    width: auto;
+    margin: 1em 1em;
   }
 }
 

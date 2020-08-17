@@ -1,4 +1,5 @@
-@import "../scss/variables.scss";
+@import "../scss/variables";
+@import "../scss/mixins";
 
 .FormContainer {
   label {
@@ -9,6 +10,11 @@
       background-color: rgba(black, 0.2);
     }
 
+    @include on-mobile {
+      padding: 1em;
+      flex-direction: column;
+    }
+
     .FormContainer__labelText {
       padding: 0.25em;
       flex-basis: 35%;
@@ -17,6 +23,13 @@
       padding-right: 0.5em;
 
       color: rgba(white, 1);
+
+      @include on-mobile {
+        flex-basis: auto;
+        text-align: center;
+        padding: 0;
+        margin-bottom: 1em;
+      }
     }
 
     .FormContainer__inputContainer {
@@ -42,14 +55,16 @@
         padding: 0.25em 1em;
         line-height: 1.5;
         font-size: 12pt;
-
         color: rgba(white, 0.75);
         background: $glass-black-color;
       }
 
       input,
       select {
+        width: fit-content;
+        display: block;
         padding: 0.25em;
+        flex-grow: 1;
 
         line-height: 1.5;
         font-size: 12pt;
@@ -58,8 +73,12 @@
         color: white;
         background: none;
         border: none;
-
         outline: none !important;
+
+        @include on-mobile {
+          width: 0; // WTF: otherwise the input won't respond to flex.
+          padding-right: 1em;
+        }
       }
 
       option {

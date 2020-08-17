@@ -1,4 +1,5 @@
-@import "../scss/variables.scss";
+@import "../scss/variables";
+@import "../scss/mixins";
 
 .SummaryBlock__table {
   width: 100%;
@@ -8,6 +9,11 @@
   overflow: hidden;
   border-spacing: 0;
   border-collapse: collapse;
+
+  @include on-mobile {
+    width: calc(100% - 2em);
+    margin: 0 1em;
+  }
 
   thead {
     tr {
@@ -33,7 +39,7 @@
   }
 
   td {
-    padding: 1em 1em;
+    padding: 1em 0.5em;
     text-align: center;
 
     &:first-child {
@@ -42,11 +48,24 @@
     &:last-child {
       padding-right: 5em;
     }
+
+    @include on-mobile {
+      &:first-child {
+        padding-left: 0.5em;
+      }
+      &:last-child {
+        padding-right: 0.5em;
+      }
+    }
   }
 }
 
 td.SummaryBlockStep__step {
   width: 35%;
+
+  @include on-mobile {
+    width: auto;
+  }
 }
 
 td.SummaryBlockStep__value {

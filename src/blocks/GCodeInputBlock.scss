@@ -1,3 +1,5 @@
+@import "../scss/mixins";
+
 .GCodeInputBlock {
   padding: 1em;
 
@@ -10,4 +12,8 @@
   font-size: 16pt;
   text-align: center;
   margin-bottom: 1rem;
+
+  @include on-mobile {
+    font-size: 12pt;
+  }
 }
