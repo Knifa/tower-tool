@@ -1,3 +1,4 @@
+@import "./scss/variables";
 @import "./scss/mixins";
 
 .AppContainer {
@@ -8,7 +9,7 @@
   .IntroContainer,
   .ToolContainer {
     width: 600px;
-    margin: 0 1em;
+    margin: 0 $spacing;
 
     @include on-mobile {
       width: 100%;

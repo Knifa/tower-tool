@@ -35,7 +35,9 @@ $glass-hover-gradient: linear-gradient(0deg, $glass-hover-gradient-colors);
 $glass-white-color: rgba(white, 0.2);
 $glass-black-color: rgba(black, 0.2);
 
-$border-radius: 0.25em;
+$spacing: 1em;
+
+$border-radius: 0.5em;
 $shadow-small: 0.125em 0.125em rgba(black, 0.25);
 $shadow-big: 0.25em 0.25em rgba(0, 0, 0, 0.15);
 

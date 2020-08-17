@@ -1,7 +1,8 @@
 @import "../scss/mixins";
+@import "../scss/variables.scss";
 
 .GCodeInputBlock {
-  padding: 1em;
+  padding: $spacing;
 
   input {
     display: none;

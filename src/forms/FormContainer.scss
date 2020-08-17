@@ -4,14 +4,14 @@
 .FormContainer {
   label {
     display: flex;
-    padding: 1em 0;
+    padding: $spacing 0;
 
     &:nth-child(2n + 1) {
       background-color: rgba(black, 0.2);
     }
 
     @include on-mobile {
-      padding: 1em;
+      padding: $spacing;
       flex-direction: column;
     }
 
@@ -28,7 +28,7 @@
         flex-basis: auto;
         text-align: center;
         padding: 0;
-        margin-bottom: 1em;
+        margin-bottom: $spacing;
       }
     }
 
