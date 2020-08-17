@@ -6,14 +6,14 @@ import { Block } from "../Block";
 
 import "./GCodeInputBlock.scss";
 
-export const GCodeInputBlock = (props: { onChange: (file: File) => void }) => {
-  const [fileName, setFileName] = useState("No file selected.");
+export const GCodeInputBlock = (props: {
+  onChange: (file: File) => void;
+  filename?: string;
+}) => {
   const fileRef = useRef<HTMLInputElement>(null);
 
   function onFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files![0];
-    setFileName(file.name);
-
     props.onChange(file);
   }
 
@@ -26,7 +26,9 @@ export const GCodeInputBlock = (props: { onChange: (file: File) => void }) => {
           onChange={onFileChange}
           ref={fileRef}
         />
-        <div className="GCodeInputBlock__fileName">{fileName}</div>
+        <div className="GCodeInputBlock__fileName">
+          {props.filename ? props.filename : "No file selected."}
+        </div>
 
         <button
           onClick={() => {
