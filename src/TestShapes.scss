@@ -1,4 +1,5 @@
-@import "./scss/variables.scss";
+@import "./scss/variables";
+@import "./scss/mixins";
 
 .TestShapeContainer {
   display: flex;
@@ -8,12 +9,16 @@
 
   margin: 0 20%;
 
+  @include on-mobile {
+    margin: 0;
+  }
+
   .TestShape {
     display: block;
     margin: 0.25em 0.25em;
     text-align: center;
 
-    padding: 0.5em 1em;
+    padding: ($spacing / 2) $spacing;
     background-color: $glass-white-color;
     border-radius: $border-radius;
     box-shadow: $shadow-small;

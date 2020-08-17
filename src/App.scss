@@ -1,3 +1,6 @@
+@import "./scss/variables";
+@import "./scss/mixins";
+
 .AppContainer {
   display: flex;
   flex-wrap: wrap;
@@ -6,6 +9,16 @@
   .IntroContainer,
   .ToolContainer {
     width: 600px;
-    margin: 0 1em;
+    margin: 0 $spacing;
+
+    @include on-mobile {
+      width: 100%;
+    }
+  }
+
+  .ToolContainer {
+    @include on-mobile {
+      margin: 0;
+    }
   }
 }
