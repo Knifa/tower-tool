@@ -12,20 +12,36 @@ const RotatingVideo = (props: { path: string }) => {
 export const TestShapes: React.FunctionComponent = (props) => {
   return (
     <div className="TestShapeContainer">
-      <a className="TestShape" href="retraction_tower.stl">
-        <RotatingVideo path="retraction_tower.webm" />
+      <a
+        className="TestShape"
+        href={`${process.env.PUBLIC_URL}/retraction_tower.stl`}
+      >
+        <RotatingVideo
+          path={`${process.env.PUBLIC_URL}/retraction_tower.webm`}
+        />
         <p>Retraction</p>
       </a>
-      <a className="TestShape" href="edge_tower.stl">
-        <RotatingVideo path="edge_tower.webm" />
+      <a
+        className="TestShape"
+        href={`${process.env.PUBLIC_URL}/edge_tower.stl`}
+      >
+        <RotatingVideo path={`${process.env.PUBLIC_URL}/edge_tower.webm`} />
         <p>Edges</p>
       </a>
-      <a className="TestShape" href="overhang_tower.stl">
-        <RotatingVideo path="overhang_tower.webm" />
+      <a
+        className="TestShape"
+        href={`${process.env.PUBLIC_URL}/overhang_tower.stl`}
+      >
+        <RotatingVideo path={`${process.env.PUBLIC_URL}/overhang_tower.webm`} />
         <p>Overhangs</p>
       </a>
-      <a className="TestShape" href="temperature_tower.stl">
-        <RotatingVideo path="temperature_tower.webm" />
+      <a
+        className="TestShape"
+        href={`${process.env.PUBLIC_URL}/temperature_tower.stl`}
+      >
+        <RotatingVideo
+          path={`${process.env.PUBLIC_URL}/temperature_tower.webm`}
+        />
         <p>Temperature</p>
       </a>
     </div>
