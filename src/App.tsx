@@ -19,8 +19,23 @@ export const App = () => {
 
   const processEnabled = gcodeFile !== null;
 
+  const onDragPrevent = (e: React.DragEvent) => {
+    e.preventDefault();
+  };
+
+  const onFileDrop = (e: React.DragEvent) => {
+    const file = e.dataTransfer.files[0];
+    setGcodeFile(file);
+    e.preventDefault();
+  };
+
   return (
-    <div className="App">
+    <div
+      className="App"
+      onDragEnter={onDragPrevent}
+      onDragOver={onDragPrevent}
+      onDrop={onFileDrop}
+    >
       <Header />
 
       <div className="AppContainer">
@@ -29,7 +44,10 @@ export const App = () => {
         </div>
 
         <div className="ToolContainer">
-          <GCodeInputBlock onChange={setGcodeFile} />
+          <GCodeInputBlock
+            filename={gcodeFile ? gcodeFile.name : undefined}
+            onChange={setGcodeFile}
+          />
           <GCodeSettingsBlock />
           <TowerSettings />
           <SummaryBlock />
