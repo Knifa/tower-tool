@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f2975623dd4abebfb990d5d37f814756",
+    "revision": "f14d800859671e4f1473ad3bc49c29f2",
     "url": "/tower-tool/index.html"
   },
   {
-    "revision": "e81a9ad6f6ab8f3b3e87",
+    "revision": "ae968e5ea86bcefea34e",
     "url": "/tower-tool/static/css/main.f90fcd42.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tower-tool/static/js/2.cfb49ab5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e81a9ad6f6ab8f3b3e87",
-    "url": "/tower-tool/static/js/main.54b58216.chunk.js"
+    "revision": "ae968e5ea86bcefea34e",
+    "url": "/tower-tool/static/js/main.bb273629.chunk.js"
   },
   {
     "revision": "b7fb209a99e8089b5ce7",
