@@ -1,7 +1,11 @@
 import { Range } from "../../utils";
 import { GCodeLocation } from "../processor";
 import { GCodeTransformer } from "./transformer";
-import { TransformerActionSkipToEnd, TransformerActionAppend } from "./actions";
+import {
+  TransformerActionSkipToEnd,
+  TransformerActionAppend,
+  TransformerActionNoOp,
+} from "./actions";
 
 export class TemperatureTransformer extends GCodeTransformer {
   readonly tempRange: Range;
@@ -12,6 +16,8 @@ export class TemperatureTransformer extends GCodeTransformer {
   }
 
   onLayer(location: GCodeLocation) {
+    if (location.chunk === null) return new TransformerActionNoOp();
+
     const newTemp = Math.floor(
       this.tempRange.start + location.chunk! * this.tempRange.step
     );
