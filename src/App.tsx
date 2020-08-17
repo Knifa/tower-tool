@@ -23,29 +23,31 @@ export const App = () => {
     <div className="App">
       <Header />
 
-      <div className="IntroContainer">
-        <Intro />
-      </div>
+      <div className="AppContainer">
+        <div className="IntroContainer">
+          <Intro />
+        </div>
 
-      <div className="ToolContainer">
-        <GCodeInputBlock onChange={setGcodeFile} />
-        <GCodeSettingsBlock />
-        <TowerSettings />
-        <SummaryBlock />
-        <GCodeOutputBlock
-          onProcessClick={() => {
-            GCodeFile.fromFile(gcodeFile!).then((f) => {
-              const processor = GCodeProcessor.fromVariable(
-                state.gcode.variable.type,
-                state.gcode.gcodeSettings,
-                state.gcode.variable.range
-              );
+        <div className="ToolContainer">
+          <GCodeInputBlock onChange={setGcodeFile} />
+          <GCodeSettingsBlock />
+          <TowerSettings />
+          <SummaryBlock />
+          <GCodeOutputBlock
+            onProcessClick={() => {
+              GCodeFile.fromFile(gcodeFile!).then((f) => {
+                const processor = GCodeProcessor.fromVariable(
+                  state.gcode.variable.type,
+                  state.gcode.gcodeSettings,
+                  state.gcode.variable.range
+                );
 
-              processor.process(f);
-            });
-          }}
-          enabled={processEnabled}
-        />
+                processor.process(f);
+              });
+            }}
+            enabled={processEnabled}
+          />
+        </div>
       </div>
     </div>
   );
