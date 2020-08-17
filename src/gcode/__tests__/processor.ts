@@ -1,5 +1,5 @@
 import { readFileText } from "../utils";
-import { GCodeFile } from "../processor";
+import { GCodeFile, GCodeLocation } from "../processor";
 
 jest.mock("../utils");
 
@@ -14,5 +14,15 @@ describe("GCodeFile", () => {
 
     expect(gcodeFile.file).toBe(mockFile);
     expect(gcodeFile.lines).toEqual(["a line", "another line", "a third line"]);
+  });
+});
+
+describe("GCodeLocation", () => {
+  it("can be created from layer details", async () => {
+    const loc = GCodeLocation.fromLayer(4, 0.25, 4, 0.5);
+
+    expect(loc.layer).toEqual(4);
+    expect(loc.z).toEqual(5 * 0.25);
+    expect(loc.chunk).toEqual(0);
   });
 });
