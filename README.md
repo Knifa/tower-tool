@@ -1,6 +1,10 @@
 # tower-tool
 
-A tool to generate sweet calibration towers for your 3D printer.
+A tool to generate sweet calibration towers for your 3D printer!
+
+## Usage
+
+Visit http://kawaii.computer/tower-tool/ to use the tool. This uses the `gh-pages` branch.
 
 ## Developing
 
