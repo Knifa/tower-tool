@@ -20,14 +20,14 @@ ReactDOM.render(
         Tower Tool
       </h1>
       <h2>
-        <a href="https://github.com/">
+        <a href="https://github.com/Knifa/tower-tool">
           <FontAwesomeIcon
             icon={faGithub}
             fixedWidth
             transform="down-1 grow-4"
           />
         </a>{" "}
-        <a href="https://github.com/">v1.0</a> by{" "}
+        <a href="https://github.com/Knifa/tower-tool/tree/1.0">v1.0</a> by{" "}
         <a href="https://github.com/Knifa">@knifa</a>
       </h2>
     </header>

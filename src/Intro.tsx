@@ -14,7 +14,9 @@ export const Intro: FunctionComponent = () => {
       </p>
       <p>
         If you're a keen bean, please{" "}
-        <a href="https://github.com/">check out Tower Tool on GitHub!</a>
+        <a href="https://github.com/Knifa/tower-tool">
+          check out Tower Tool on GitHub!
+        </a>
       </p>
       <h2>Test Shapes</h2>
       <p>Try out these test shapes! They're compact and quick to print.</p>
