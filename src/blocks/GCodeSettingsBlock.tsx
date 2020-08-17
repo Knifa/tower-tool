@@ -23,7 +23,7 @@ export const GCodeSettingsBlock: FunctionComponent = () => {
       <div className="BlockContent__text">
         <p>
           Customize your <strong>slicer</strong> and <strong>test shape</strong>{" "}
-          settings. The defaults here are perfect for the test shapes above.
+          settings. The defaults here are perfect for our test shapes.
         </p>
       </div>
       <FormContainer>
