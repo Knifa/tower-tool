@@ -37,15 +37,20 @@ export const Intro: FunctionComponent = () => {
         Using <strong>Cura</strong>? You're all set.
       </p>
       <p>
-        Using <strong>PrusaSlicer</strong>? Add this line to the start of the
-        textbox under{" "}
+        Using <strong>PrusaSlicer</strong> or <strong>Slic3r</strong>? Add the
+        line below to the start of the textbox under{" "}
         <em>Printer Settings ➤ Custom G-code ➤ Before Layer Change G-code</em>.
       </p>
       <CopyCode>;LAYER:[layer_num]</CopyCode>
+      <p>
+        Using <strong>something else</strong>? Something like the line above
+        needs to appear after every layer change with the new layer number,
+        starting from zero.
+      </p>
       <h3>Print End</h3>
       <p>
-        Using <strong>Cura</strong>? Add this line to the start of the textbox
-        under{" "}
+        Using <strong>Cura</strong>? Add the line below to the start of the
+        textbox under{" "}
         <em>
           Preferences ➤ Printers ➤ [your printer] ➤ Machine Settings ➤ End
           G-code
@@ -53,10 +58,16 @@ export const Intro: FunctionComponent = () => {
         .
       </p>
       <p>
-        Using <strong>PrusaSlicer</strong>? Add this line to the start of the
-        textbox under <em>Printer Settings ➤ Custom G-code ➤ End G-code</em>.
+        Using <strong>PrusaSlicer</strong> or <strong>Slic3r</strong>? Add the
+        line below to the start of the textbox under{" "}
+        <em>Printer Settings ➤ Custom G-code ➤ End G-code</em>.
       </p>
       <CopyCode>;PRINT_END</CopyCode>
+      <p>
+        Using <strong>something else</strong>? Something like the line above
+        needs to appear just as the print is about to end, before any actions
+        like homing or turning off fans.
+      </p>
     </div>
   );
 };
