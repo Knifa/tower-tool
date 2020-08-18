@@ -12,6 +12,7 @@ import { TemperatureTransformer } from "./temperature";
 import { AccelerationTransformer } from "./acceleration";
 import { JerkTransformer } from "./jerk";
 import { FlowTransformer } from "./flow";
+import { LinearAdvanceTransformer } from "./linearAdvance";
 
 export enum TransformVariable {
   RetractDistance,
@@ -20,6 +21,7 @@ export enum TransformVariable {
   Acceleration,
   Jerk,
   Flow,
+  LinearAdvance,
 }
 
 export {
@@ -34,4 +36,5 @@ export {
   AccelerationTransformer,
   JerkTransformer,
   FlowTransformer,
+  LinearAdvanceTransformer,
 };

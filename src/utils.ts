@@ -75,4 +75,9 @@ export const variableToCopy: Record<TransformVariable, VariableCopy> = {
     units: "%",
     step: 1,
   },
+  [TransformVariable.LinearAdvance]: {
+    name: "Linear Advance (Marlin)",
+    units: "K",
+    step: 0.1,
+  },
 };

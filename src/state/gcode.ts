@@ -35,6 +35,11 @@ const variableDefaultRanges: Record<TransformVariable, Range> = {
     step: 1,
     stop: 105,
   },
+  [TransformVariable.LinearAdvance]: {
+    start: 0.1,
+    step: 0.1,
+    stop: 1,
+  },
 };
 
 export interface GcodeReducerState {
