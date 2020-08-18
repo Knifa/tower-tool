@@ -98,10 +98,8 @@ export class GCodeProcessor {
 
       if (this.updateLocation(line)) {
         const layerAction = this.transformer.onLayer(this.location);
-        if (layerAction instanceof TransformerActionNoOp) {
-          outputLines.push(line);
-        } else if (layerAction instanceof TransformerActionAppend) {
-          outputLines.push(line, ...layerAction.lines);
+        if (layerAction instanceof TransformerActionAppend) {
+          outputLines.push(...layerAction.lines);
         } else if (layerAction instanceof TransformerActionSkipToEnd) {
           skippingToEnd = true;
         }
