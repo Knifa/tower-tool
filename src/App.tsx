@@ -8,7 +8,7 @@ import { SummaryBlock } from "./blocks/SummaryBlock";
 import { Intro } from "./Intro";
 
 import { useSelector } from "./state";
-import { GCodeFile, GCodeProcessor } from "./gcode";
+import { GCodeFile, GCodeProcessor, saveLines } from "./gcode";
 
 import "./App.scss";
 import { Header } from "./Header";
@@ -60,7 +60,8 @@ export const App = () => {
                   state.gcode.variable.range
                 );
 
-                processor.process(f);
+                const lines = processor.process(f);
+                saveLines(lines);
               });
             }}
             enabled={processEnabled}

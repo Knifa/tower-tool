@@ -117,19 +117,7 @@ export class GCodeProcessor {
       }
     }
 
-    this.save(outputLines);
-  }
-
-  save(lines: string[]) {
-    const gcode = lines.join("\n");
-    const blob = new Blob([gcode], { type: "text/plain" });
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement("a");
-    a.download = "output.gcode";
-    a.href = url;
-    a.target = "_blank";
-    a.click();
+    return outputLines;
   }
 
   private updateLocation(line: string): boolean {
