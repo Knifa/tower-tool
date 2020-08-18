@@ -8,6 +8,7 @@ import {
   AccelerationTransformer,
   JerkTransformer,
   FlowTransformer,
+  LinearAdvanceTransformer,
   TransformerActionNoOp,
   TransformerActionReplace,
   TransformerActionSkipToEnd,
@@ -178,6 +179,11 @@ export class GCodeProcessor {
 
       case TransformVariable.Flow: {
         transformer = new FlowTransformer(range);
+        break;
+      }
+
+      case TransformVariable.LinearAdvance: {
+        transformer = new LinearAdvanceTransformer(range);
         break;
       }
     }
