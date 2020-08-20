@@ -39,9 +39,7 @@ export const App = () => {
       <Header />
 
       <div className="AppContainer">
-        <div className="IntroContainer">
-          <Intro />
-        </div>
+        <Intro />
 
         <div className="ToolContainer">
           <GCodeInputBlock

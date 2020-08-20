@@ -6,18 +6,12 @@
   flex-wrap: wrap;
   justify-content: center;
 
-  .IntroContainer,
   .ToolContainer {
     width: 600px;
     margin: 0 $spacing;
 
     @include on-mobile {
       width: 100%;
-    }
-  }
-
-  .ToolContainer {
-    @include on-mobile {
       margin: 0;
     }
   }
