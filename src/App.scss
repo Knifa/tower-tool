@@ -1,18 +1,38 @@
 @import "./scss/variables";
 @import "./scss/mixins";
 
-.AppContainer {
+$split-breakpoint: $block-width * 2 + ($spacing * 4);
+
+.App {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: stretch;
+  height: 100%;
 
-  .ToolContainer {
-    width: 600px;
-    margin: 0 $spacing;
+  .DarkSide {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    background-color: black;
+    box-shadow: $shadow-big;
+    z-index: 1;
 
-    @include on-mobile {
-      width: 100%;
-      margin: 0;
+    @media screen and (min-width: $split-breakpoint) {
+      justify-content: flex-end;
+    }
+  }
+
+  .LightSide {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: $spacing;
+    background-color: $primary-color;
+
+    @media screen and (max-width: $split-breakpoint) {
+      align-items: center;
+      justify-content: flex-start;
     }
   }
 }

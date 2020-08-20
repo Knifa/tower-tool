@@ -7,7 +7,7 @@
     padding: $spacing 0;
 
     &:nth-child(2n + 1) {
-      background-color: rgba(black, 0.2);
+      background-color: $block-bg-content-alt;
     }
 
     @include on-mobile {
@@ -40,10 +40,7 @@
       border-radius: $border-radius;
       overflow: hidden;
 
-      background: $glass-gradient;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: 100%;
+      background-color: $input-bg;
 
       .FormContainer__inputIcon {
         padding: 0.25em 0.5em;

@@ -7,30 +7,34 @@
   box-shadow: $shadow-big;
 
   overflow: hidden;
-  margin: $spacing 0em;
-  width: 100%;
+  margin: ($spacing / 2) 0;
+  width: $block-width;
 
   &:first-child {
     margin-top: 0;
   }
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   @include on-mobile {
-    width: auto;
-    margin: $spacing;
+    width: 100%;
   }
 }
 
 .BlockHeader {
   .BlockHeader__title {
     flex-grow: 1;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: $block-bg-title;
     padding: $spacing;
+    font-weight: bold;
   }
 }
 
 .BlockContent {
   position: relative;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: $block-bg-content;
 
   .BlockContent__text {
     p:first-child {
@@ -50,22 +54,17 @@
     color: white;
     box-shadow: $shadow-small;
 
-    background: none;
-    background-image: $glass-gradient;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100%;
+    background-color: $input-bg;
     border: none;
     outline: none;
 
     border-radius: $border-radius;
 
     &:hover {
-      background-image: $glass-hover-gradient;
+      background-color: $input-bg-hover;
     }
 
     &:disabled {
-      background-image: $glass-gradient;
       opacity: 0.5;
     }
   }

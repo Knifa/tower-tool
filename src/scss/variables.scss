@@ -1,44 +1,22 @@
 @import "~sass-material-colors";
 
-$primary-gradient-colors: (
-  material-color("deep-orange", "700"),
-  material-color("deep-purple", "700")
-);
+$primary-color: material-color("light-green", "700");
 
-$glass-gradient-colors: ();
-@each $color in $primary-gradient-colors {
-  $glass-gradient-colors: append(
-    $glass-gradient-colors,
-    change-color($color, $alpha: 0.5),
-    comma
-  );
-}
-
-$glass-hover-gradient-colors: ();
-@each $color in $primary-gradient-colors {
-  $glass-hover-gradient-colors: append(
-    $glass-hover-gradient-colors,
-    adjust-color(
-      change-color($color, $alpha: 0.5),
-      $red: 25,
-      $green: 25,
-      $blue: 25
-    ),
-    comma
-  );
-}
-
-$primary-gradient: linear-gradient(0deg, $primary-gradient-colors);
-$glass-gradient: linear-gradient(0deg, $glass-gradient-colors);
-$glass-hover-gradient: linear-gradient(0deg, $glass-hover-gradient-colors);
-
-$glass-white-color: rgba(white, 0.2);
+$glass-white-color: rgba(white, 0.1);
 $glass-black-color: rgba(black, 0.2);
 
-$spacing: 1em;
-$border-radius: 0.5em;
+$spacing: 16px;
+$border-radius: $spacing / 2;
 
-$shadow-small: 0.125em 0.125em rgba(black, 0.25);
-$shadow-big: 0.25em 0.25em rgba(0, 0, 0, 0.15);
+$shadow-small: ($spacing / 8) ($spacing / 8) rgba(black, 0.25);
+$shadow-big: ($spacing / 4) ($spacing / 4) rgba(0, 0, 0, 0.15);
 
+$block-width: 600px;
 $mobile-max-width: 650px;
+
+$block-bg-title: change-color($primary-color, $lightness: 15);
+$block-bg-content: black;
+$block-bg-content-alt: change-color($primary-color, $lightness: 5);
+
+$input-bg: change-color($primary-color, $lightness: 15);
+$input-bg-hover: adjust-color($input-bg, $lightness: 5);

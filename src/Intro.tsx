@@ -1,11 +1,15 @@
 import React, { FunctionComponent } from "react";
 import CopyCode from "./CopyCode";
 import { TestShapes } from "./TestShapes";
+import { Header } from "./Header";
+
 import "./Intro.scss";
 
 export const Intro: FunctionComponent = () => {
   return (
     <div className="Intro">
+      <Header />
+
       <h2>Hello!</h2>
       <p>
         This tool can generate sweet <strong>calibration towers</strong> for

@@ -36,35 +36,33 @@ export const App = () => {
       onDragOver={onDragPrevent}
       onDrop={onFileDrop}
     >
-      <Header />
-
-      <div className="AppContainer">
+      <div className="DarkSide">
         <Intro />
+      </div>
 
-        <div className="ToolContainer">
-          <GCodeInputBlock
-            filename={gcodeFile ? gcodeFile.name : undefined}
-            onChange={setGcodeFile}
-          />
-          <GCodeSettingsBlock />
-          <TowerSettings />
-          <SummaryBlock />
-          <GCodeOutputBlock
-            onProcessClick={() => {
-              GCodeFile.fromFile(gcodeFile!).then((f) => {
-                const processor = GCodeProcessor.fromVariable(
-                  state.gcode.variable.type,
-                  state.gcode.gcodeSettings,
-                  state.gcode.variable.range
-                );
+      <div className="LightSide">
+        <GCodeInputBlock
+          filename={gcodeFile ? gcodeFile.name : undefined}
+          onChange={setGcodeFile}
+        />
+        <GCodeSettingsBlock />
+        <TowerSettings />
+        <SummaryBlock />
+        <GCodeOutputBlock
+          onProcessClick={() => {
+            GCodeFile.fromFile(gcodeFile!).then((f) => {
+              const processor = GCodeProcessor.fromVariable(
+                state.gcode.variable.type,
+                state.gcode.gcodeSettings,
+                state.gcode.variable.range
+              );
 
-                const lines = processor.process(f);
-                saveLines(lines);
-              });
-            }}
-            enabled={processEnabled}
-          />
-        </div>
+              const lines = processor.process(f);
+              saveLines(lines);
+            });
+          }}
+          enabled={processEnabled}
+        />
       </div>
     </div>
   );
