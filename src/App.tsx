@@ -11,7 +11,6 @@ import { useSelector } from "./state";
 import { GCodeFile, GCodeProcessor, saveLines } from "./gcode";
 
 import "./App.scss";
-import { Header } from "./Header";
 
 export const App = () => {
   const [gcodeFile, setGcodeFile] = useState<File | null>(null);
