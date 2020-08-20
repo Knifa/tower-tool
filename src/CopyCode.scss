@@ -4,13 +4,13 @@
   display: block;
   margin: $spacing 0;
   padding: $spacing;
-  background-color: rgba(white, 0.2);
+  background-color: $input-bg;
   border-radius: 0.5em;
   box-shadow: $shadow-small;
   line-height: 1;
 
   &:hover {
-    background-color: rgba(white, 0.25);
+    background-color: $input-bg-hover;
     cursor: pointer;
   }
 }

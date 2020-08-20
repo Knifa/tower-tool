@@ -34,6 +34,18 @@ describe("GCodeLocation", () => {
     expect(loc.z).toEqual(5 * 0.25);
     expect(loc.chunk).toEqual(0);
   });
+
+  it("meets chunk boundary", () => {
+    const locA = GCodeLocation.fromLayer(2, 0.25, 4, 0.5);
+    expect(locA.layer).toEqual(2);
+    expect(locA.z).toEqual(3 * 0.25);
+    expect(locA.chunk).toEqual(0);
+
+    const locB = GCodeLocation.fromLayer(18, 0.25, 4, 0.5);
+    expect(locB.layer).toEqual(18);
+    expect(locB.z).toEqual(19 * 0.25);
+    expect(locB.chunk).toEqual(1);
+  });
 });
 
 describe("GCodeProcessor", () => {

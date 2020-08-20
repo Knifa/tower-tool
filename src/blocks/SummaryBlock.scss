@@ -2,7 +2,9 @@
 @import "../scss/mixins";
 
 .SummaryBlock__table {
-  width: 100%;
+  width: $block-width;
+
+  margin: $spacing / 2 0;
 
   border-radius: $border-radius;
   box-shadow: $shadow-small;
@@ -11,13 +13,14 @@
   border-collapse: collapse;
 
   @include on-mobile {
-    width: calc(100% - 2em);
-    margin: 0 $spacing;
+    width: 100%;
   }
 
   thead {
+    font-weight: bold;
+
     tr {
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: $block-bg-title;
     }
 
     td.SummaryBlock__stepHeader {
@@ -31,10 +34,10 @@
 
   tbody tr {
     font-size: 12pt;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: $block-bg-content;
 
     &:nth-child(2n + 1) {
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: $block-bg-content-alt;
     }
   }
 
