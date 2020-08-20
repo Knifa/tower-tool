@@ -6,12 +6,8 @@ import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import { store } from "./state";
 
-import { Skyline } from "./Skyline";
-
 ReactDOM.render(
   <React.StrictMode>
-    <Skyline />
-
     <Provider store={store}>
       <App />
     </Provider>

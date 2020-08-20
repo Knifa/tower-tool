@@ -37,7 +37,6 @@ describe("GCodeLocation", () => {
 
   it("meets chunk boundary", () => {
     const locA = GCodeLocation.fromLayer(2, 0.25, 4, 0.5);
-
     expect(locA.layer).toEqual(2);
     expect(locA.z).toEqual(3 * 0.25);
     expect(locA.chunk).toEqual(0);
