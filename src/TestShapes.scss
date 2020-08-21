@@ -19,7 +19,7 @@
     text-align: center;
 
     padding: ($spacing / 2) $spacing;
-    background-color: $input-bg;
+    background-color: $dark-input-bg;
     border-radius: $border-radius;
     box-shadow: $shadow-small;
 
@@ -32,7 +32,7 @@
     }
 
     &:hover {
-      background-color: $input-bg-hover;
+      background-color: $dark-input-bg-hover;
     }
 
     video,

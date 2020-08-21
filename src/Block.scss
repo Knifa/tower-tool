@@ -54,14 +54,17 @@
     color: white;
     box-shadow: $shadow-small;
 
-    background-color: $input-bg;
+    background-image: $input-gradient;
+    background-attachment: fixed;
+    background-size: cover;
+
     border: none;
     outline: none;
 
     border-radius: $border-radius;
 
     &:hover {
-      background-color: $input-bg-hover;
+      background-image: $input-gradient-hover;
     }
 
     &:disabled {

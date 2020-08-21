@@ -1,6 +1,20 @@
 @import "~sass-material-colors";
 
-$primary-color: material-color("light-green", "700");
+$primary-color: material-color("pink", "700");
+$alt-color: material-color("deep-purple", "700");
+$dark-color: material-color("grey", "900");
+
+$primary-gradient: linear-gradient($primary-color, $alt-color);
+
+$input-gradient: linear-gradient(
+  adjust-color($primary-color, $lightness: -10, $saturation: -20),
+  adjust-color($alt-color, $lightness: -10, $saturation: -20)
+);
+
+$input-gradient-hover: linear-gradient(
+  adjust-color($primary-color, $lightness: -5, $saturation: -20),
+  adjust-color($alt-color, $lightness: -5, $saturation: -20)
+);
 
 $glass-white-color: rgba(white, 0.1);
 $glass-black-color: rgba(black, 0.2);
@@ -14,9 +28,12 @@ $shadow-big: ($spacing / 4) ($spacing / 4) rgba(0, 0, 0, 0.15);
 $block-width: 600px;
 $mobile-max-width: 650px;
 
-$block-bg-title: change-color($primary-color, $lightness: 15);
-$block-bg-content: black;
-$block-bg-content-alt: change-color($primary-color, $lightness: 5);
+$block-bg-title: rgba(black, 0.5);
+$block-bg-content: $dark-color;
+$block-bg-content-alt: adjust-color($block-bg-content, $lightness: 2);
 
 $input-bg: change-color($primary-color, $lightness: 15);
 $input-bg-hover: adjust-color($input-bg, $lightness: 5);
+
+$dark-input-bg: #333;
+$dark-input-bg-hover: adjust-color($dark-input-bg, $lightness: 5);
