@@ -9,7 +9,6 @@ export const Intro: FunctionComponent = () => {
   return (
     <div className="Intro">
       <Header />
-
       <h2>Hello!</h2>
       <p>
         This tool can generate sweet <strong>calibration towers</strong> for
@@ -32,9 +31,7 @@ export const Intro: FunctionComponent = () => {
       </p>
       <h2>Slicer Setup</h2>
       <p>
-        We need to be able to figure out when a new layer starts and when the
-        print is over. You'll need to make a couple of changes to your slicer to
-        get going.
+        You'll need to make a couple of changes to your slicer to get going.
       </p>
       <h3>Layer Change</h3>
       <p>
@@ -47,9 +44,8 @@ export const Intro: FunctionComponent = () => {
       </p>
       <CopyCode>;LAYER:[layer_num]</CopyCode>
       <p>
-        Using <strong>something else</strong>? Something like the line above
-        needs to appear after every layer change with the new layer number,
-        starting from zero.
+        Using <strong>something else</strong>? The line above needs to appear
+        after every layer change with the new layer number, starting from zero.
       </p>
       <h3>Print End</h3>
       <p>
@@ -68,9 +64,48 @@ export const Intro: FunctionComponent = () => {
       </p>
       <CopyCode>;PRINT_END</CopyCode>
       <p>
-        Using <strong>something else</strong>? Something like the line above
-        needs to appear just as the print is about to end, before any actions
-        like homing or turning off fans.
+        Using <strong>something else</strong>? The line above needs to appear
+        just as the print is about to end, before any actions like homing or
+        turning off fans.
+      </p>
+      <h3>Retraction</h3>
+      <p>
+        Using <strong>Cura?</strong>
+        <ul>
+          <li>
+            Uncheck <strong>Relative Extrusion</strong>.
+          </li>
+          <li>
+            Uncheck <strong>Enable Coasting</strong>.
+          </li>
+          <li>
+            Set <strong>Outer Wall Wipe Distance</strong> to 0.
+          </li>
+          <li>
+            Set <strong>Infill Wipe Distance</strong> to 0.
+          </li>
+        </ul>
+      </p>
+      <p>
+        Using <strong>PrusaSlicer or Slic3r?</strong>
+        <ul>
+          <li>
+            Enable <strong>Expert</strong> settings mode.
+          </li>
+          <li>
+            Under <em>Printer Settings ➤ General</em>, check{" "}
+            <strong>use relative E distances</strong>.
+          </li>
+          <li>
+            Under <em>Printer Settings ➤ Extruder 1</em>, uncheck{" "}
+            <strong>Wipe while retracting</strong>.
+          </li>
+        </ul>
+      </p>
+      <p>
+        Using <strong>something else?</strong> You must enable{" "}
+        <strong>relative extrusion</strong> and disable any{" "}
+        <strong>coasting</strong> or <strong>wiping</strong> moves.
       </p>
     </div>
   );

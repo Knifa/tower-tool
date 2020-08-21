@@ -111,7 +111,6 @@ describe("GCodeProcessor", () => {
     );
 
     const lines = processor.process(mockFile);
-    console.log(lines);
     expect(lines).toEqual([
       ";LAYER:0",
       ";LAYER:1",

@@ -28,7 +28,7 @@ describe("retract distance", () => {
     expect(transformer.onLayer(location)).toBeInstanceOf(TransformerActionNoOp);
   });
 
-  it("replaces retraction", () => {
+  it("replaces retraction in either order", () => {
     const transformer = new RetractTransformer({
       distanceRange: { start: 1, step: 0.25, stop: 5 },
     });
@@ -37,7 +37,7 @@ describe("retract distance", () => {
 
     transformer.onLine("M82", location);
     const actionBack = transformer.onLine("G1 E-69.69 F420", location);
-    const actionForward = transformer.onLine("G1 E69.69 F420", location);
+    const actionForward = transformer.onLine("G1 F420 E69.69", location);
 
     expect(actionBack).toBeInstanceOf(TransformerActionReplace);
     expect((actionBack as TransformerActionReplace).lines).toMatchObject([
