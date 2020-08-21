@@ -34,7 +34,7 @@ export class RetractTransformer extends GCodeTransformer {
     this.speedRange = opts.speedRange;
     this.retractRegex = opts.retractRegex
       ? opts.retractRegex
-      : /G(0|1) E(?<distance>(-|\d|\.)+) F(?<speed>(\d|.)+)/;
+      : /G(0|1)((?=.*\bE(?<distance>(-|\d|\.)+)\b)(?=.*\bF(?<speed>(\d|\.)+)\b))(?!.*(X|Y|Z))/;
 
     this.retractMode = RetractMode.Absolute;
 
