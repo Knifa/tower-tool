@@ -40,7 +40,9 @@
       border-radius: $border-radius;
       overflow: hidden;
 
-      background-color: $input-bg;
+      background-image: $input-gradient;
+      background-attachment: fixed;
+      background-size: cover;
 
       .FormContainer__inputIcon {
         padding: 0.25em 0.5em;

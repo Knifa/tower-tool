@@ -1,7 +1,7 @@
 @import "./scss/variables";
 @import "./scss/mixins";
 
-$split-breakpoint: $block-width * 2 + ($spacing * 4);
+$split-breakpoint: $block-width * 2 + ($spacing * 8);
 
 .App {
   display: flex;
@@ -14,12 +14,13 @@ $split-breakpoint: $block-width * 2 + ($spacing * 4);
     display: flex;
     justify-content: center;
     flex-grow: 1;
-    background-color: black;
+    background-color: $dark-color;
     box-shadow: $shadow-big;
     z-index: 1;
 
     @media screen and (min-width: $split-breakpoint) {
       justify-content: flex-end;
+      padding: $spacing;
     }
   }
 
@@ -27,12 +28,16 @@ $split-breakpoint: $block-width * 2 + ($spacing * 4);
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding: $spacing;
-    background-color: $primary-color;
+    padding: $spacing * 2;
+
+    background-image: $primary-gradient;
+    background-attachment: fixed;
+    background-size: cover;
 
     @media screen and (max-width: $split-breakpoint) {
       align-items: center;
       justify-content: flex-start;
+      padding: $spacing;
     }
   }
 }

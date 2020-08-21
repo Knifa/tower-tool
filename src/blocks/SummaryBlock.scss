@@ -34,10 +34,10 @@
 
   tbody tr {
     font-size: 12pt;
-    background-color: $block-bg-content;
+    background-color: $block-bg-content-alt;
 
     &:nth-child(2n + 1) {
-      background-color: $block-bg-content-alt;
+      background-color: $block-bg-content;
     }
   }
 
